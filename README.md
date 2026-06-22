@@ -1,4 +1,4 @@
-# A National-Scale Ensemble Machine Learning Framework for Telecommunication Tower Site Selection in Ethiopia
+# Machine Learning and Geospatial Modeling Reveal Telecommunication Tower Suitability, Deployment Priorities, and Digital Connectivity Gaps Across Ethiopia
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![R version](https://img.shields.io/badge/R-%E2%89%A5%204.3-blue.svg)](https://www.r-project.org/)
@@ -6,7 +6,7 @@
 
 This repository contains the code, predictor metadata, and reproduction instructions for the manuscript:
 
-> **Reja, A. A. & Yasin, K. H. (2026).** *A National-Scale Ensemble Machine Learning Framework for Telecommunication Tower Site Selection in Ethiopia.* Manuscript under review.
+> **Reja, A. A. & Yasin, K. H. (2026).** *Machine Learning and Geospatial Modeling Reveal Telecommunication Tower Suitability, Deployment Priorities, and Digital Connectivity Gaps Across Ethiopia.* Manuscript under review.
 
 The framework integrates open Earth observation, Demographic and Health Survey (DHS), and crowdsourced infrastructure data through a stacked ensemble of LightGBM, XGBoost, Random Forest, and MaxEnt classifiers under nested spatial block cross-validation. It produces a national 1 km suitability surface, an operational priority surface, and a digital-equity-adjusted priority surface that systematically reveals geographies of digital exclusion missed by conventional siting maps.
 
@@ -113,7 +113,7 @@ In R or RStudio:
 source("R/00_setup.R")
 ```
 
-This installs the required CRAN packages and verifies your environment. The full list and their pinned versions are in `data/sessionInfo.txt`.
+This installs the required CRAN packages and verifies your environment. The full list and its pinned versions are in `data/sessionInfo.txt`.
 
 ### Run the full pipeline
 
@@ -183,7 +183,7 @@ The 23 predictor variables are listed in `data/predictor_metadata.csv` with thei
 
 If you use this code or the framework, please cite:
 
-> Reja, A. A. & Yasin, K. H. (2026). A National-Scale Ensemble Machine Learning Framework for Telecommunication Tower Site Selection in Ethiopia. *[Journal]* (under review).
+> Reja, A. A. & Yasin, K. H. (2026). Machine Learning and Geospatial Modeling Reveal Telecommunication Tower Suitability, Deployment Priorities, and Digital Connectivity Gaps Across Ethiopia. *[Journal]* (under review).
 
 A machine-readable BibTeX entry is in `CITATION.cff`.
 
@@ -214,7 +214,7 @@ Code is released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## Contact
 
-- **Kalid Hassen Yasin** (corresponding) — kalid.yasin@plus.ac.at
+- **Kalid Hassen Yasin** (corresponding)
   Department of Geoinformatics — Z_GIS, University of Salzburg, Austria
   Department of Geography and Environmental Studies, Haramaya University, Ethiopia
 
