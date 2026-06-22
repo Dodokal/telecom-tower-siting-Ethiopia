@@ -1,0 +1,80 @@
+# ---------- R / RStudio ----------
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+.Rapp.history
+
+# ---------- Large data files (regenerate from sources) ----------
+*.tif
+*.tiff
+*.gpkg
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.zip
+*.tar.gz
+*.7z
+
+# Keep small example / reference files
+!data/example/*.csv
+!figures/*.png
+
+# ---------- Intermediate results that should regenerate ----------
+results/checkpoints/
+results/models/*.rds
+results/01_*.csv
+results/02_*.csv
+results/intermediate/
+*.rds
+
+# ---------- DHS data (registered access only — never commit) ----------
+data/dhs_2016/
+data/dhs/
+
+# ---------- System / editor junk ----------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# ---------- OS-specific ----------
+Desktop.ini
+$RECYCLE.BIN/
+
+# ---------- Secrets and API keys (never commit) ----------
+.env
+*.key
+*.pem
+credentials.json
+secrets.yaml
+.Renviron
+google-earth-engine-key.json
+
+# ---------- LaTeX build artefacts ----------
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+
+# ---------- Python (if anyone adds Python scripts later) ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+
+# ---------- Logs ----------
+*.log
+logs/

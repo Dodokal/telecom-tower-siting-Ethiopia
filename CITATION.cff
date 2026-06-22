@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the article and the software."
+title: "A National-Scale Ensemble Machine Learning Framework for Telecommunication Tower Site Selection in Ethiopia"
+abstract: >-
+  A reproducible R pipeline that integrates open Earth observation, DHS, and
+  crowdsourced infrastructure data to identify operator-revealed siting
+  priorities and digital-equity gaps across Ethiopia. Uses a stacked ensemble
+  of LightGBM, XGBoost, Random Forest, and MaxEnt under nested spatial block
+  cross-validation, with SHAP-based interpretability and a digital-equity
+  weighting scheme.
+authors:
+  - family-names: Reja
+    given-names: Amira Ahmed
+    affiliation: "Department of Electrical and Computer Engineering, Adigrat University, Ethiopia"
+  - family-names: Yasin
+    given-names: Kalid Hassen
+    email: kalid.yasin@plus.ac.at
+    affiliation: "Department of Geoinformatics — Z_GIS, University of Salzburg, Austria"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+version: "1.0.0"
+date-released: "2026-06-22"
+license: CC-BY-4.0
+repository-code: "https://github.com/Dodokal/telecom-tower-siting-ethiopia"
+keywords:
+  - telecommunications
+  - spatial machine learning
+  - stacked ensemble
+  - digital equity
+  - SHAP interpretability
+  - Ethiopia
+  - LightGBM
+  - spatial cross-validation
+preferred-citation:
+  type: article
+  title: "A National-Scale Ensemble Machine Learning Framework for Telecommunication Tower Site Selection in Ethiopia"
+  authors:
+    - family-names: Reja
+      given-names: Amira Ahmed
+    - family-names: Yasin
+      given-names: Kalid Hassen
+  year: 2026
+  status: "under-review"

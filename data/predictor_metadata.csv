@@ -1,0 +1,23 @@
+code,full_name,group,native_resolution,type,source,licence,url
+DRO,Distance to all roads,Access,100m (vector-derived),continuous,OpenStreetMap via Geofabrik,ODbL,https://download.geofabrik.de/africa/ethiopia.html
+DPR,Distance to primary roads,Access,100m (vector-derived),continuous,OpenStreetMap via Geofabrik,ODbL,https://download.geofabrik.de/africa/ethiopia.html
+DGR,Distance to medium-voltage power grid (gridfinder),Access,100m (vector-derived),continuous,gridfinder predictive MV grid,CC BY 4.0,https://gridfinder.org/
+DAIR,Distance to airports,Access,100m (vector-derived),continuous,OpenStreetMap via Geofabrik,ODbL,https://download.geofabrik.de/africa/ethiopia.html
+DURB,Distance to urban centres,Access,100m (vector-derived),continuous,OpenStreetMap via Geofabrik,ODbL,https://download.geofabrik.de/africa/ethiopia.html
+DWAT,Distance to water bodies,Access,30m,continuous,JRC GSW v1.4,CC BY 4.0,https://global-surface-water.appspot.com/
+BU,Built-up surface (GHSL GHS-BUILT-S 2020),Demand,100m,continuous,European Commission JRC GHSL,CC BY 4.0,https://human-settlement.emergency.copernicus.eu/
+POP,Population density (WorldPop 2020 constrained),Demand,100m,continuous,WorldPop 2020 Ethiopia constrained,CC BY 4.0,https://www.worldpop.org/
+POP5,Population within 5 km (focal sum of WorldPop),Demand,100m,continuous,Derived from WorldPop,CC BY 4.0,https://www.worldpop.org/
+NLT,Night-time lights (VIIRS DNB 2023),Demand,500m,continuous,NOAA VIIRS DNB Annual V22 2023,Public Domain,https://eogdata.mines.edu/products/vnl/
+DHS_I,DHS internet/mobile user prevalence,Demand,5km,continuous,DHS Program 2016 Ethiopia,Registered access,https://dhsprogram.com/
+DHS_E,DHS electricity access prevalence,Demand,5km,continuous,DHS Program 2016 Ethiopia,Registered access,https://dhsprogram.com/
+ELV,Elevation,Terrain,30m,continuous,SRTM v3,Public Domain,https://lpdaac.usgs.gov/products/srtmgl1v003/
+SLP,Slope (derived from SRTM),Terrain,30m,continuous,Derived from SRTM v3,Public Domain,https://lpdaac.usgs.gov/products/srtmgl1v003/
+ASP,Aspect (derived from SRTM),Terrain,30m,continuous,Derived from SRTM v3,Public Domain,https://lpdaac.usgs.gov/products/srtmgl1v003/
+TRI,Terrain Ruggedness Index,Terrain,30m,continuous,Derived from SRTM v3,Public Domain,https://lpdaac.usgs.gov/products/srtmgl1v003/
+TPI,Topographic Position Index (500m kernel),Terrain,30m,continuous,Derived from SRTM v3,Public Domain,https://lpdaac.usgs.gov/products/srtmgl1v003/
+PRCP,Mean annual precipitation (CHIRPS 2015-2023),Climate,5km,continuous,UCSB CHIRPS v2.0,Public,https://www.chc.ucsb.edu/data/chirps
+LC,Land cover (ESA WorldCover 2021),Land,10m,categorical (one-hot),ESA WorldCover v200 2021,CC BY 4.0,https://esa-worldcover.org/
+SMOD,GHSL Settlement Model class,Land,1km,categorical (one-hot),European Commission JRC GHSL,CC BY 4.0,https://human-settlement.emergency.copernicus.eu/
+PA,Protected area binary,Land,100m (vector-derived),binary,WDPA May 2024,Terms apply,https://www.protectedplanet.net/
+FLD,Flood inundation binary,Hazard,1km,binary,Global Flood Model intercomparison (Trigg et al. 2016),Cite Trigg 2016,https://doi.org/10.1088/1748-9326/11/9/094014

@@ -1,0 +1,36 @@
+# ============================================================================
+# Random seeds used across the pipeline
+# ----------------------------------------------------------------------------
+# Running each script with the seed below should reproduce the exact numbers
+# reported in the manuscript. Note that LightGBM and XGBoost are deterministic
+# only when num_threads = 1; with multi-threading enabled, very small numeric
+# differences in the 4th-5th decimal place are expected but the qualitative
+# results are stable.
+# ============================================================================
+
+# Pipeline-stage seeds
+presence_dedup_seed: 42
+pseudo_absence_sampling: 20260512
+predictor_extraction: 1
+training_table_imputation: 42
+
+# Cross-validation
+outer_fold_assignment: 0
+inner_fold_assignment: 1
+
+# Hyperparameter tuning
+latin_hypercube_seed: 7
+bayesian_optimization_seed: 7
+
+# Sensitivity analyses (Section 3 of 10_reviewer_response.R)
+moran_resampling: 1
+variogram_subsample: 1
+calibration_oof_folds: 42
+equity_weight_spatSample: 1234
+threshold_sensitivity_subsample: 1
+
+# Stacked ensemble
+stack_member_subsample: 7
+
+# Cross-model robustness (200k pixel subsample)
+crossmodel_subsample: 1

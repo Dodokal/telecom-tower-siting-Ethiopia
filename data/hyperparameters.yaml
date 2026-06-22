@@ -1,0 +1,102 @@
+# ============================================================================
+# Hyperparameter configuration
+# ----------------------------------------------------------------------------
+# Tuned values from the Latin-hypercube grid search of size 12 on inner
+# spatial folds, optimising AUC. These are the final values used to produce
+# the headline national prediction surface and all downstream priority
+# analyses reported in the manuscript.
+#
+# Search ranges shown below each block document the prior space the tuner
+# explored, in case a reviewer or downstream user wants to widen the search.
+# ============================================================================
+
+random_forest:
+  engine: ranger
+  trees: 1000
+  mtry: 5            # tuned (search: 2-12)
+  min_n: 7           # tuned (search: 2-20)
+  splitrule: gini
+  importance: permutation
+  num_threads: 2
+
+xgboost:
+  engine: xgboost
+  trees: 600
+  tree_depth: 6      # tuned (search: 3-12)
+  learn_rate: 0.05   # tuned (search: 0.005-0.3, log scale)
+  loss_reduction: 0.0   # gamma — fixed default
+  sample_size: 0.85  # tuned (search: 0.5-1.0)
+  mtry: 8            # tuned (search: 2-15)
+  min_n: 5           # tuned (search: 2-30)
+  nthread: 2
+
+lightgbm:
+  engine: bonsai::lightgbm
+  trees: 600
+  num_leaves: 31     # tuned (search: 7-127)
+  learn_rate: 0.05   # tuned (search: 0.005-0.3, log scale)
+  min_data_in_leaf: 7   # tuned (search: 2-30)
+  feature_fraction: 0.8 # tuned (search: 0.5-1.0)
+  bagging_fraction: 0.8 # tuned (search: 0.5-1.0)
+  num_threads: 2
+  verbosity: -1
+
+maxent:
+  engine: maxnet
+  regularization_multiplier: 1.0   # fixed default
+  feature_classes: ["linear", "quadratic", "hinge"]
+  # MaxEnt was used as a benchmark only; not included in the stacked
+  # ensemble because its probability calibration differs from the
+  # tree-based learners.
+
+stacked_ensemble:
+  meta_learner: glmnet
+  penalty: 0.001     # tuned via elastic-net path
+  mixture: 0.5       # equal L1/L2 (elastic-net)
+  members: ["random_forest", "xgboost", "lightgbm"]
+  # MaxEnt excluded — see comment under maxent above.
+
+# ============================================================================
+# Cross-validation configuration
+# ============================================================================
+
+spatial_cv:
+  outer:
+    method: blockCV::spatialBlock
+    block_size_m: 50000     # justified by Moran I & variogram (range 7.45 km)
+    n_folds: 10
+    selection: random
+    rasterLayer: ETH_population
+  inner:
+    method: blockCV::spatialBlock
+    block_size_m: 50000
+    n_folds: 5
+    # nested within each outer training partition
+
+# ============================================================================
+# Decision threshold for threshold-dependent metrics
+# ============================================================================
+
+threshold:
+  method: maximise_TSS_on_inner_folds
+  # The optimal threshold is selected on inner CV folds by maximising the
+  # True Skill Statistic; reported metrics are evaluated on outer folds.
+
+# ============================================================================
+# Priority surface thresholds (Equation 4 and Section 2.10)
+# ============================================================================
+
+priority_thresholds:
+  greenfield_percentile: 0.90   # top decile of multiplicative priority score
+  greenfield_min_distance_km: 5 # km to nearest existing tower
+  densification_percentile: 0.75
+  densification_max_distance_km: 5
+
+# ============================================================================
+# Equity-weighting (Equation 5)
+# ============================================================================
+
+equity_weights:
+  w_internet: 0.5
+  w_electricity: 0.5
+  # Sensitivity analysis at 0.3/0.7 and 0.7/0.3 reported in Table S2.
